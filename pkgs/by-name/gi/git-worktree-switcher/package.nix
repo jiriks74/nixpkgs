@@ -1,4 +1,12 @@
-{ lib, stdenv, fetchFromGitHub, makeWrapper, installShellFiles, git, jq }:
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  makeWrapper,
+  installShellFiles,
+  git,
+  jq,
+}:
 
 stdenv.mkDerivation rec {
   pname = "git-worktree-switcher";
@@ -30,7 +38,12 @@ stdenv.mkDerivation rec {
     mkdir -p $out/bin
 
     cp wt $out/bin
-    wrapProgram $out/bin/wt --prefix PATH : ${lib.makeBinPath [ git jq ]}
+    wrapProgram $out/bin/wt --prefix PATH : ${
+      lib.makeBinPath [
+        git
+        jq
+      ]
+    }
 
     installShellCompletion --zsh completions/_wt_completion
     installShellCompletion --bash completions/wt_completion
