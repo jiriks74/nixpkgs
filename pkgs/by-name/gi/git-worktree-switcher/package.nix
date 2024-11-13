@@ -55,6 +55,6 @@ stdenv.mkDerivation rec {
     description = "Switch between git worktrees with speed.";
     license = licenses.mit;
     platforms = platforms.all;
-    maintainers = with maintainers; [ jiriks74 ];
+    maintainers = with maintainers; [ jiriks74 mateusauler ];
   };
 }
