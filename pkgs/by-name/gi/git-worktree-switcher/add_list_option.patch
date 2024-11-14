@@ -1,0 +1,14 @@
+diff --git a/wt b/wt
+index 9e18674..1aaf2b5 100755
+--- a/wt
++++ b/wt
+@@ -160,6 +160,9 @@ init() {
+ }
+ 
+ case "${args[0]}" in
++list)
++  worktree_list_names
++  ;;
+ names)
+ 	worktree_list_names
+ 	;;
